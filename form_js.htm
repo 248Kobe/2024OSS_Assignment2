@@ -404,8 +404,9 @@
                 Continue to checkout
               </button>
             </form>
+
             <script>
-              function validateForm(event) {
+              function validateForm() {
                 let valid = true;
 
                 const firstName = document
@@ -414,7 +415,13 @@
                 const lastName = document
                   .getElementById("lastName")
                   .value.trim();
-                const email = document.getElementById("email").value.trim();
+                const username = document
+                  .getElementById("username")
+                  .value.trim();
+                const ccNumber = document
+                  .getElementById("cc-number")
+                  .value.trim();
+                const ccName = document.getElementById("cc-name").value.trim();
 
                 if (firstName.length < 2) {
                   alert("First name must be at least 2 characters long");
@@ -426,19 +433,24 @@
                   valid = false;
                 }
 
-                if (email !== "") {
-                  const emailPattern =
-                    /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-                  if (!emailPattern.test(email)) {
-                    alert("Please enter a valid email address");
-                    valid = false;
-                  }
+                if (username.length > 10) {
+                  alert("Username must not exceed 10 characters");
+                  valid = false;
                 }
-                if (!valid) {
-                  event.preventDefault();
-                } else {
-                  alert("Form is valid! Submitting...");
+
+                const ccNumberPattern = /^\d{16}$/;
+                if (!ccNumberPattern.test(ccNumber)) {
+                  alert("Credit card number must be 16 digits long");
+                  valid = false;
                 }
+
+                const ccNamePattern = /^[A-Za-z]+ [A-Za-z]+$/;
+                if (!ccNamePattern.test(ccName)) {
+                  alert("Name on card must contain first and last name");
+                  valid = false;
+                }
+
+                return valid;
               }
             </script>
           </div>
