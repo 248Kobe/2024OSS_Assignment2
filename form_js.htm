@@ -181,7 +181,7 @@
 
           <div class="col-md-7 col-lg-8">
             <h4 class="mb-3">Billing address</h4>
-            <form name="form1" onsubmit="validateForm()" method="post">
+            <form name="form1" onsubmit="return validateForm()" method="post">
               <div class="row g-3">
                 <div class="col-sm-6">
                   <label for="firstName" class="form-label">First name</label>
@@ -404,69 +404,41 @@
                 Continue to checkout
               </button>
             </form>
-
             <script>
-              function empty_inputs() {
-                const inputs = document.querySelectorAll(
-                  "#firstName, #lastName, #username, #email, #address, #address2, #zip, #country, #state, #cc-name, #cc-number, #cc-expiration, #cc-cvv"
-                );
-
-                inputs.forEach((input) => {
-                  input.value = "";
-                });
-
-                const checkboxes = document.querySelectorAll(
-                  "#same-address, #save-info"
-                );
-                checkboxes.forEach((checkbox) => {
-                  checkbox.checked = false;
-                });
-
-                const paymentMethods = document.querySelectorAll(
-                  'input[name="paymentMethod"]'
-                );
-                paymentMethods.forEach((method) => {
-                  method.checked = false;
-                });
-              }
-              function validateForm() {
+              function validateForm(event) {
                 let valid = true;
-                const inputs = document.querySelectorAll(
-                  "#firstName, #lastName, #username, #email, #address, #zip, #country, #state, #cc-name, #cc-number, #cc-expiration, #cc-cvv"
-                );
 
-                inputs.forEach((input) => {
-                  if (input.value === "") {
-                    alert(`${input.id} is required`);
-                    valid = false;
-                    return;
-                  }
-                });
+                const firstName = document
+                  .getElementById("firstName")
+                  .value.trim();
+                const lastName = document
+                  .getElementById("lastName")
+                  .value.trim();
+                const email = document.getElementById("email").value.trim();
 
-                const email = document.getElementById("email");
-                if (email.value !== "") {
-                  const emailPattern =
-                    /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-                  if (!emailPattern.test(email.value)) {
-                    alert("Please enter a valid email address");
-                    valid = false;
-                    return false;
-                  }
-                }
-
-                const paymentMethod = document.querySelector(
-                  'input[name="paymentMethod"]:checked'
-                );
-                if (!paymentMethod) {
-                  alert("Please select a payment method.");
+                if (firstName.length < 2) {
+                  alert("First name must be at least 2 characters long");
                   valid = false;
                 }
 
-                if (valid) {
-                  empty_inputs();
+                if (lastName.length < 2) {
+                  alert("Last name must be at least 2 characters long");
+                  valid = false;
                 }
 
-                return valid;
+                if (email !== "") {
+                  const emailPattern =
+                    /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+                  if (!emailPattern.test(email)) {
+                    alert("Please enter a valid email address");
+                    valid = false;
+                  }
+                }
+                if (!valid) {
+                  event.preventDefault();
+                } else {
+                  alert("Form is valid! Submitting...");
+                }
               }
             </script>
           </div>
