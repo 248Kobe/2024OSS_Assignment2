@@ -409,19 +409,13 @@
               function validateForm() {
                 let valid = true;
 
-                const firstName = document
-                  .getElementById("firstName")
-                  .value.trim();
-                const lastName = document
-                  .getElementById("lastName")
-                  .value.trim();
-                const username = document
-                  .getElementById("username")
-                  .value.trim();
-                const ccNumber = document
-                  .getElementById("cc-number")
-                  .value.trim();
-                const ccName = document.getElementById("cc-name").value.trim();
+                const firstName = document.getElementById("firstName").value;
+                const lastName = document.getElementById("lastName").value;
+                const username = document.getElementById("username").value;
+                const ccNumber = document.getElementById("cc-number").value;
+                const ccName = document.getElementById("cc-name").value;
+                const ccExpiration =
+                  document.getElementById("cc-expiration").value;
 
                 if (firstName.length < 2) {
                   alert("First name must be at least 2 characters long");
@@ -447,6 +441,12 @@
                 const ccNamePattern = /^[A-Za-z]+ [A-Za-z]+$/;
                 if (!ccNamePattern.test(ccName)) {
                   alert("Name on card must contain first and last name");
+                  valid = false;
+                }
+
+                const ccExpirationPattern = /^(0[1-9]|1[0-2])\/\d{2}$/; // MM/YY format
+                if (!ccExpirationPattern.test(ccExpiration)) {
+                  alert("Expiration date must be in MM/YY format (e.g. 12/24)");
                   valid = false;
                 }
 
