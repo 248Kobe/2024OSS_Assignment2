@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: white;
+        padding: 20px;
+        margin: 0;
+      }
+
+      h1 {
+        color: black;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      #input_append {
+        padding: 10px;
+        width: 200px;
+        margin-right: 10px;
+        border: 1px solid grey;
+        border-radius: 4px;
+      }
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        font-size: 14px;
+      }
+      button:first-of-type {
+        /*등록*/
+        background-color: #007bff;
+      }
+      button:last-of-type {
+        /*삭제*/
+        background-color: #28a745;
+      }
+      button:hover {
+        opacity: 0.8;
+      }
+
+      #div_append {
+        margin-top: 20px;
+      }
+
+      #div_append div {
+        padding: 10px;
+        background-color: #e9ecef;
+        margin: 5px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      #div_append div:hover {
+        background-color: #ced4da;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Dynamic Web Page</h1>
+    <input type="text" id="input_append" placeholder="Enter text" />
+    <button onclick="listener_append()">등록</button>
+    <button onclick="delete_all()">삭제</button>
+    <div id="div_append"></div>
+
+    <script>
+      function listener_append() {
+        let div_append = document.getElementById("div_append");
+        let input_append = document.getElementById("input_append").value;
+        if (input_append === "" || input_append === "undefined") {
+          return false;
+        }
+        div_append.innerHTML +=
+          "<div onclick='listener_remove(this)'>" + input_append + "</div>";
+        document.getElementById("input_append").value = "";
+      }
+
+      function listener_remove(obj) {
+        obj.remove();
+      }
+
+      function delete_all() {
+        let div_append = document.getElementById("div_append");
+        div_append.innerHTML = "";
+        document.getElementById("input_append").value = "";
+      }
+    </script>
+  </body>
+</html>
