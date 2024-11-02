@@ -119,6 +119,16 @@
       "address": "874 Greenwood Rd",
       "birthdate": "2001-01-23",
       "id": "36cf"
+    },
+    {
+      "name": "Harrison Barnes",
+      "relationship": "Friend",
+      "phone": "010-4002-2111",
+      "gender": "Male",
+      "email": "harrison@handong.ac.kr",
+      "address": "500 Harrington St",
+      "birthdate": "2003-01-02",
+      "id": "018f"
     }
   ]
 }

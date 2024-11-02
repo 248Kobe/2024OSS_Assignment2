@@ -19,7 +19,7 @@
       <div id="friendTable" class="table-responsive"></div>
     </div>
 
-    <!-- Modals for Add/Edit Friend -->
+    <!-- bootstrap modal -->
     <div
       class="modal fade"
       id="friendModal"
@@ -129,9 +129,9 @@
           event.preventDefault();
           const friendId = $("#friendId").val();
           if (friendId) {
-            updateFriendToJSONFile(friendId);
+            updateFriend(friendId);
           } else {
-            addFriendToJSONFile();
+            addFriend();
           }
         });
       });
@@ -195,7 +195,7 @@
         modal.show();
       }
 
-      function addFriendToJSONFile() {
+      function addFriend() {
         const xhr = new XMLHttpRequest();
         xhr.open("POST", "http://localhost:3000/friends");
         xhr.setRequestHeader("content-type", "application/json;charset=UTF-8");
@@ -222,7 +222,7 @@
         };
       }
 
-      function updateFriendToJSONFile(id) {
+      function updateFriend(id) {
         const xhr = new XMLHttpRequest();
         xhr.open("PUT", "http://localhost:3000/friends/" + id);
         xhr.setRequestHeader("content-type", "application/json;charset=UTF-8");
@@ -290,7 +290,7 @@
         }
       }
 
-      // Event delegation for dynamically generated buttons
+      // for edit and delete button on each data
       $(document).on("click", ".edit-button", function () {
         const id = $(this).data("id");
         editFriend(id);
