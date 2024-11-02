@@ -1,0 +1,124 @@
+{
+  "friends": [
+    {
+      "name": "Handong Kim",
+      "relationship": "Friend",
+      "phone": "010-3456-7890",
+      "gender": "Male",
+      "email": "handong@handong.ac.kr",
+      "address": "123 Main St",
+      "birthdate": "2001-01-15",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "relationship": "Club Member",
+      "phone": "010-3567-8901",
+      "gender": "Female",
+      "email": "jane@handong.ac.kr",
+      "birthdate": "2004-05-22",
+      "address": "456 Elm St"
+    },
+    {
+      "id": "3",
+      "name": "Alice Johnson",
+      "relationship": "Neighbor",
+      "phone": "010-3678-9012",
+      "gender": "Female",
+      "email": "alice@handong.ac.kr",
+      "birthdate": "2000-09-10",
+      "address": "789 Maple Ave"
+    },
+    {
+      "id": "4",
+      "name": "Bob Brown",
+      "relationship": "Friend",
+      "phone": "010-2789-0123",
+      "gender": "Male",
+      "email": "bob@handong.ac.kr",
+      "birthdate": "2001-03-14",
+      "address": "101 Oak Blvd"
+    },
+    {
+      "id": "5",
+      "name": "Charlie Davis",
+      "relationship": "Teammate",
+      "phone": "010-2890-1234",
+      "gender": "Male",
+      "email": "charlie@handong.ac.kr",
+      "birthdate": "2002-12-05",
+      "address": "234 Pine Ln"
+    },
+    {
+      "id": "6",
+      "name": "Dana White",
+      "relationship": "Teammate",
+      "phone": "010-9011-2345",
+      "gender": "Female",
+      "email": "dana@handong.ac.kr",
+      "birthdate": "2003-07-18",
+      "address": "567 Cedar Rd"
+    },
+    {
+      "id": "7",
+      "name": "Eve Black",
+      "relationship": "Friend",
+      "phone": "010-0142-3456",
+      "gender": "Female",
+      "email": "eve@handong.ac.kr",
+      "birthdate": "2001-11-30",
+      "address": "890 Birch St"
+    },
+    {
+      "id": "8",
+      "name": "Frank Green",
+      "relationship": "Friend",
+      "phone": "010-1233-4567",
+      "gender": "Male",
+      "email": "frank@handong.ac.kr",
+      "birthdate": "2001-02-25",
+      "address": "123 Willow Ave"
+    },
+    {
+      "name": "Grace King",
+      "relationship": "Relative",
+      "phone": "010-2324-5678",
+      "gender": "Female",
+      "email": "grace@handong.ac.kr",
+      "address": "456 Aspen Blvd",
+      "birthdate": "1999-04-17",
+      "id": "9"
+    },
+    {
+      "id": "10",
+      "name": "Henry Lee",
+      "relationship": "Friend",
+      "phone": "010-3415-6789",
+      "gender": "Male",
+      "email": "henry@handong.ac.kr",
+      "birthdate": "2001-06-12",
+      "address": "789 Cypress Ln"
+    },
+    {
+      "id": "11",
+      "name": "Ivy Martinez",
+      "relationship": "Tutor",
+      "phone": "010-4576-7891",
+      "gender": "Female",
+      "email": "ivy@handong.ac.kr",
+      "birthdate": "1998-08-08",
+      "address": "101 Redwood Rd"
+    },
+    {
+      "name": "Minho Jung",
+      "relationship": "Friend",
+      "phone": "010-2352-3095",
+      "gender": "Male",
+      "email": "minho@handong.ac.kr",
+      "address": "874 Greenwood Rd",
+      "birthdate": "2001-01-23",
+      "id": "36cf"
+    }
+  ]
+}

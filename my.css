@@ -22,7 +22,7 @@ h1 {
   padding-bottom: 10px;
 }
 
-/* For responsive container */
+/* Responsive Flex Container */
 .responsive-flex-container {
   display: flex;
   flex-direction: column;
@@ -37,6 +37,80 @@ h1 {
 
 .info-section {
   order: 2;
+}
+
+/* Modal Styles */
+.modal-content {
+  border-radius: 8px;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+  padding: 20px;
+}
+
+.modal-title {
+  font-size: 24px;
+  color: #2c3e50;
+}
+
+.modal-footer .btn {
+  min-width: 80px;
+  font-size: 14px;
+}
+
+/* Table Styles */
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+.table thead th {
+  color: #2c3e50;
+  background-color: #eaf4fb;
+  border-bottom: 2px solid #3498db;
+}
+
+/* Button Styles */
+.btn {
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  border: none;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+/* Form Styles */
+.form-control {
+  border-radius: 4px;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.form-control:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 4px rgba(52, 152, 219, 0.4);
 }
 
 /* Desktop */
@@ -122,7 +196,7 @@ h1 {
   }
 
   .table thead {
-    display: none; /* Hide table headers o*/
+    display: none; /* Hide table headers */
   }
 
   .table tr {
